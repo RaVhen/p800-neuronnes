@@ -56,7 +56,12 @@ print(X.shape)
 Mat = np.ones((X.shape[0], X.shape[1]-1))
 vals = X[::, :11]
 print(vals.shape)
-notes = X[::, 11:].ravel()
+notes = Xit [::, 11:].ravel()
 print(notes)
 print("\n*********START*************\n")
 print(linear_regression(vals,notes,0.00000001,1000))
+
+#[-0.05372424  0.49211252  0.75945961  0.31661645  0.9484536  -0.00098885
+# -0.02389221  0.47618403  0.15109721  0.77785199  0.56559019]
+#Probleme des modeles lineaires => les caracteristiques sont independantes donc le resultat depend de
+#caracteristiques ce qui n'est pas forcement vrai: cela peut etre une combinaison de ces dernieres
