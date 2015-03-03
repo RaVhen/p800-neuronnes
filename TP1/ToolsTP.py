@@ -1,6 +1,5 @@
 import math
 import numpy as np
-from scipy import stats
 """
 
 rendez-vous sur 	  	
@@ -54,7 +53,7 @@ def linear_regression(X,Y,epsilon,nbiteration):
   for i in range (nbiteration):
     prod = np.dot(X,w)           #multiplication de matrice
     error = rmse(Y, prod)
-    print (error)
+    print ("Erreur = ",error)
     w += epsilon*np.dot(X.T,(Y-prod))
   return w
     
