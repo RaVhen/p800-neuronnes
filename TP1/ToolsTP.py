@@ -53,10 +53,9 @@ y = polynom(x)
 X = np.loadtxt("winequality-white.csv",delimiter=";")
 print(X.shape)
 
-Mat = np.ones((X.shape[0], X.shape[1]-1))
 vals = X[::, :11]
 print(vals.shape)
-notes = Xit [::, 11:].ravel()
+notes = X[::, 11:].ravel()
 print(notes)
 print("\n*********START*************\n")
 print(linear_regression(vals,notes,0.00000001,1000))
