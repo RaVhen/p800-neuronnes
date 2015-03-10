@@ -142,8 +142,8 @@ class NN:
               inputs=X[j,]
               self.update(inputs)
               error = error + self.backPropagate(Y[j,], N, M,Lambda)                
-            #if i % 1 == 0 and i!=0:
-              #print str(i)+' error ' + str(error/X.shape[0])
+            if i % 1 == 0 and i!=0:
+              print str(i)+' error ' + str(error/X.shape[0])
 
         return (error/X.shape[0])
 
