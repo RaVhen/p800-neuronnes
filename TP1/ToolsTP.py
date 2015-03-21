@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import matplotlib.pyplot as plt
 
 first = np.arange(1,11)
 second = np.random.randn(10)
@@ -37,12 +38,19 @@ def rmse(predicted,observed):
 def linear_regression(X,Y,epsilon,nbiteration):
   w = np.random.rand(X.shape[1])
   #print(w.shape)
+  ord = list()
+  abs = list()
   for i in range (nbiteration):
     prod = np.dot(X,w)           #multiplication de matrice
     #print(prod.shape)
     error = rmse(Y, prod)
     print ("Erreur = ",error)
     w += epsilon*np.dot(X.T,(Y-prod))
+    ord.append(error)
+    abs.append(i)
+  plt.plot(abs, ord)
+  plt.xlim(0, 300)
+  plt.show()
   return w
     
 #generer 
@@ -58,7 +66,7 @@ print(vals.shape)
 notes = X[::, 11:].ravel()
 print(notes)
 print("\n*********START*************\n")
-print(linear_regression(vals,notes,0.00000001,1000))
+print(linear_regression(vals,notes,0.00000001,10000))
 
 #[-0.05372424  0.49211252  0.75945961  0.31661645  0.9484536  -0.00098885
 # -0.02389221  0.47618403  0.15109721  0.77785199  0.56559019]
